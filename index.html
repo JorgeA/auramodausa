@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aura Moda USA</title>
+  <title>La Tiendita CR by Gaby</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-
   <!-- Top bar -->
   <div class="topbar">
     <div class="topbar__inner">
@@ -17,38 +16,41 @@
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- Header / Hero -->
   <header class="hero">
     <div class="hero__content">
 
-      <div class="brand">
-        <div class="brand__logo">
-          <img src="images/logo.jpeg" alt="Logo Aura Moda USA" />
-        </div>
+      <div class="hero__brandRow">
+        <div class="brand">
+          <!-- Logo principal -->
+          <div class="brand__logoWrap">
+            <img class="brand__logo" src="images/logo.jpeg" alt="La Tiendita CR by Gaby" />
+          </div>
 
-        <div class="brand__text">
-          <h1 class="brand__name">Aura Moda USA</h1>
-          <p class="brand__tag">Marcas originales seleccionadas en USA • Entrega inmediata en Costa Rica</p>
+          <div class="brand__text">
+            <h1 class="brand__name">La Tiendita CR</h1>
+            <p class="brand__tag">by Gaby • Marcas originales seleccionadas en USA</p>
 
-          <div class="hero__cta">
-            <a class="btn btn--primary" href="#catalogo">Ver catálogo</a>
-            <a class="btn btn--ghost" href="LINK_A_TU_GOOGLE_FORM" target="_blank" rel="noopener">Hacer encargo</a>
+            <div class="hero__cta">
+              <a class="btn btn--primary" href="#catalogo">Ver catálogo</a>
+              <a class="btn btn--ghost" href="LINK_A_TU_GOOGLE_FORM" target="_blank" rel="noopener">Hacer encargo</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="hero__meta">
-        <div class="meta-card">
-          <div class="meta-title">Entrega</div>
-          <div class="meta-value">Coordinada / Mensajería</div>
-        </div>
-        <div class="meta-card">
-          <div class="meta-title">Origen</div>
-          <div class="meta-value">Compras en USA</div>
-        </div>
-        <div class="meta-card">
-          <div class="meta-title">Reservas</div>
-          <div class="meta-value">WhatsApp</div>
+        <div class="hero__meta">
+          <div class="meta-card">
+            <div class="meta-title">Entrega</div>
+            <div class="meta-value">Coordinada / Mensajería</div>
+          </div>
+          <div class="meta-card">
+            <div class="meta-title">Origen</div>
+            <div class="meta-value">Compras en USA</div>
+          </div>
+          <div class="meta-card">
+            <div class="meta-title">Reservas</div>
+            <div class="meta-value">WhatsApp</div>
+          </div>
         </div>
       </div>
 
@@ -57,49 +59,52 @@
 
   <!-- Catalog -->
   <main class="container" id="catalogo">
-
     <section class="section-head">
-      <div class="section-head__row">
-        <div>
-          <h2>Productos disponibles</h2>
-          <p>Artículos originales traídos desde Estados Unidos. Entrega inmediata en Costa Rica.</p>
-          <p class="trustline">✅ 100% originales • 🧾 Foto/etiqueta disponible • 🚚 Entrega coordinada</p>
-        </div>
+      <h2>Productos disponibles</h2>
+      <p>Artículos originales con entrega inmediata en Costa Rica. Reserva por WhatsApp.</p>
 
-        <div class="stock-pill" id="stockPill" title="Disponibles en este momento">
-          <span class="stock-pill__dot"></span>
-          <span><b id="stockCount">0</b> disponibles</span>
+      <div class="stats">
+        <div class="stats__item">
+          <span class="dot dot--ok"></span>
+          <span><b id="countAvailable">0</b> disponibles</span>
+        </div>
+        <div class="stats__item">
+          <span class="dot dot--gold"></span>
+          <span><b id="countLastUnits">0</b> última(s) unidad(es)</span>
+        </div>
+        <div class="stats__item">
+          <span class="dot dot--muted"></span>
+          <span><b id="countTotal">0</b> producto(s)</span>
         </div>
       </div>
     </section>
 
-    <!-- Filters -->
-    <section class="filters">
-      <button class="chip active" data-filter="all">Todo</button>
-      <button class="chip" data-filter="bolsos">Bolsos</button>
-      <button class="chip" data-filter="carteras">Carteras</button>
-      <button class="chip" data-filter="accesorios">Accesorios</button>
-      <button class="chip" data-filter="zapatos">Zapatos</button>
-      <button class="chip" data-filter="ropa">Ropa</button>
+    <!-- Categories -->
+    <section class="filters" aria-label="Filtros de categoría">
+      <button class="chip active" data-filter="all" type="button">Todo</button>
+      <button class="chip" data-filter="bolsos" type="button">Bolsos</button>
+      <button class="chip" data-filter="carteras" type="button">Carteras</button>
+      <button class="chip" data-filter="accesorios" type="button">Accesorios</button>
+      <button class="chip" data-filter="zapatos" type="button">Zapatos</button>
+      <button class="chip" data-filter="ropa" type="button">Ropa</button>
     </section>
 
-    <!-- Products Grid -->
+    <!-- Products grid -->
     <section class="grid" id="grid">
 
       <!-- PRODUCTO 1 -->
       <article class="card"
-        data-category="bolsos"
-        data-name="Bolso Tommy Hilfiger"
-        data-price="59000"
-        data-oldprice="69000"
-        data-stock="1"
-        data-img="images/bolso_azul_tommy_1-O.webp"
-        data-desc="Color: Azul • Tamaño: Mediano"
-      >
+               data-category="bolsos"
+               data-status="available"
+               data-stock="2"
+               data-name="Bolso Tommy Hilfiger"
+               data-details="Color: Azul • Tamaño: Mediano"
+               data-price="59000"
+               data-oldprice="69000"
+               data-image="images/bolso_azul_tommy_1-O.webp">
         <div class="card__media">
-          <img src="images/bolso_azul_tommy_1-O.webp" alt="Bolso Tommy Hilfiger">
+          <img src="images/bolso_azul_tommy_1-O.webp" alt="Bolso Tommy Hilfiger" loading="lazy" />
           <span class="badge badge--ok">Disponible</span>
-          <span class="badge badge--lastunit" hidden>Última unidad</span>
         </div>
 
         <div class="card__body">
@@ -107,29 +112,29 @@
           <div class="card__sub">Color: Azul • Tamaño: Mediano</div>
 
           <div class="price">
-            <span class="price__now">₡59,000</span>
-            <span class="price__old">₡69,000</span>
-            <span class="price__chip" data-discount></span>
+            <div class="price__now">₡59,000</div>
+            <div class="price__was">₡69,000</div>
+            <div class="price__off">-14%</div>
           </div>
 
-          <button class="btn btn--primary btn--full btn-open">Ver detalles</button>
+          <button class="btn btn--primary btn--full js-open" type="button">Ver detalles</button>
         </div>
       </article>
 
-      <!-- PRODUCTO 2 -->
+      <!-- PRODUCTO 2 (última unidad por stock=1) -->
       <article class="card"
-        data-category="bolsos"
-        data-name="Bolso Steve Madden"
-        data-price="59000"
-        data-oldprice=""
-        data-stock="3"
-        data-img="images/bolso_steve_maiden_negro.jpg"
-        data-desc="Color: Negro • Tamaño: Mediano"
-      >
+               data-category="bolsos"
+               data-status="available"
+               data-stock="1"
+               data-name="Bolso Steve Madden"
+               data-details="Color: Negro • Tamaño: Mediano"
+               data-price="59000"
+               data-oldprice=""
+               data-image="images/bolso_steve_maiden_negro.jpg">
         <div class="card__media">
-          <img src="images/bolso_steve_maiden_negro.jpg" alt="Bolso Steve Madden">
+          <img src="images/bolso_steve_maiden_negro.jpg" alt="Bolso Steve Madden" loading="lazy" />
           <span class="badge badge--ok">Disponible</span>
-          <span class="badge badge--lastunit" hidden>Última unidad</span>
+          <span class="badge badge--last">Última unidad</span>
         </div>
 
         <div class="card__body">
@@ -137,29 +142,26 @@
           <div class="card__sub">Color: Negro • Tamaño: Mediano</div>
 
           <div class="price">
-            <span class="price__now">₡59,000</span>
-            <span class="price__old" hidden></span>
-            <span class="price__chip" data-discount hidden></span>
+            <div class="price__now">₡59,000</div>
           </div>
 
-          <button class="btn btn--primary btn--full btn-open">Ver detalles</button>
+          <button class="btn btn--primary btn--full js-open" type="button">Ver detalles</button>
         </div>
       </article>
 
-      <!-- PRODUCTO 3 -->
+      <!-- PRODUCTO 3 (vendido) -->
       <article class="card"
-        data-category="zapatos"
-        data-name="Tenis Steve Madden"
-        data-price="65000"
-        data-oldprice="75000"
-        data-stock="0"
-        data-img="images/Tenis_steve_maiden.webp"
-        data-desc="Color: Blanco • Talla: US 10"
-      >
+               data-category="zapatos"
+               data-status="sold"
+               data-stock="0"
+               data-name="Tenis Steve Madden"
+               data-details="Color: Blanco • Talla: US 10"
+               data-price="65000"
+               data-oldprice="75000"
+               data-image="images/Tenis_steve_maiden.webp">
         <div class="card__media">
-          <img src="images/Tenis_steve_maiden.webp" alt="Tenis Steve Madden">
+          <img src="images/Tenis_steve_maiden.webp" alt="Tenis Steve Madden" loading="lazy" />
           <span class="badge badge--sold">Vendido</span>
-          <span class="badge badge--lastunit" hidden>Última unidad</span>
         </div>
 
         <div class="card__body">
@@ -167,227 +169,321 @@
           <div class="card__sub">Color: Blanco • Talla: US 10</div>
 
           <div class="price">
-            <span class="price__now">₡65,000</span>
-            <span class="price__old">₡75,000</span>
-            <span class="price__chip" data-discount></span>
+            <div class="price__now">₡65,000</div>
+            <div class="price__was">₡75,000</div>
+            <div class="price__off">-13%</div>
           </div>
 
-          <button class="btn btn--disabled btn--full" disabled>No disponible</button>
+          <button class="btn btn--disabled btn--full" type="button" disabled>No disponible</button>
         </div>
       </article>
 
+      <!-- AGREGA MÁS PRODUCTOS COPIANDO UNA CARD -->
     </section>
 
-    <!-- Callout -->
+    <!-- Custom order -->
     <section class="callout">
       <div>
         <h3>¿Buscas algo específico?</h3>
-        <p>Haz tu encargo personalizado y te cotizamos por WhatsApp.</p>
+        <p>Haz tu encargo personalizado (bolsos, tenis, ropa y accesorios). Te cotizamos por WhatsApp.</p>
       </div>
-      <a class="btn btn--gold" href="LINK_A_TU_GOOGLE_FORM" target="_blank" rel="noopener">
-        Hacer encargo
-      </a>
+      <a class="btn btn--gold" href="LINK_A_TU_GOOGLE_FORM" target="_blank" rel="noopener">Hacer encargo</a>
     </section>
-
   </main>
 
-  <!-- WhatsApp floating -->
-  <a class="whatsapp-float" href="https://wa.me/TU_NUMERO" target="_blank" rel="noopener">
+  <!-- Floating WhatsApp -->
+  <a class="whatsapp-float" href="https://wa.me/TU_NUMERO" target="_blank" rel="noopener" aria-label="WhatsApp">
     WhatsApp
   </a>
 
   <footer class="footer">
-    © 2026 Aura Moda USA • Marcas originales seleccionadas en Estados Unidos
+    <p>© 2026 La Tiendita CR by Gaby • Marcas originales seleccionadas en Estados Unidos</p>
   </footer>
 
   <!-- Modal -->
-  <div class="modal" id="modal" aria-hidden="true">
-    <div class="modal__overlay" id="modalOverlay"></div>
+  <div class="modal" id="productModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close="true"></div>
+
     <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal__close" id="modalClose" aria-label="Cerrar">✕</button>
+      <button class="modal__close" type="button" data-close="true" aria-label="Cerrar">✕</button>
 
       <div class="modal__grid">
-        <div class="modal__imgwrap">
+        <div class="modal__media">
           <img id="modalImg" src="" alt="" />
         </div>
 
-        <div class="modal__info">
-          <h3 id="modalTitle" class="modal__title"></h3>
-          <p id="modalDesc" class="modal__desc"></p>
+        <div class="modal__content">
+          <div class="modal__badges">
+            <span id="modalBadgeStatus" class="badge badge--ok">Disponible</span>
+            <span id="modalBadgeLast" class="badge badge--last" style="display:none;">Última unidad</span>
+          </div>
+
+          <h3 class="modal__title" id="modalTitle">Producto</h3>
+          <p class="modal__sub" id="modalSub">Detalle</p>
 
           <div class="modal__price">
-            <span class="modal__now" id="modalNow"></span>
-            <span class="modal__old" id="modalOld"></span>
-            <span class="modal__chip" id="modalChip"></span>
-          </div>
+            <div class="price">
+              <div class="price__now" id="modalPriceNow">₡0</div>
+              <div class="price__was" id="modalPriceWas" style="display:none;">₡0</div>
+              <div class="price__off" id="modalPriceOff" style="display:none;">-0%</div>
+            </div>
 
-          <div class="modal__stock" id="modalStock"></div>
+            <div class="stock">
+              <span class="stock__label">Stock:</span>
+              <span class="stock__value" id="modalStock">0</span>
+            </div>
+          </div>
 
           <div class="modal__actions">
-            <a class="btn btn--primary" id="modalWa" href="#" target="_blank" rel="noopener">Reservar por WhatsApp</a>
-            <a class="btn btn--ghost" href="LINK_A_TU_GOOGLE_FORM" target="_blank" rel="noopener">Hacer encargo</a>
+            <a class="btn btn--primary btn--full" id="modalWhatsApp" href="#" target="_blank" rel="noopener">
+              Reservar por WhatsApp
+            </a>
+            <a class="btn btn--ghost btn--full" href="LINK_A_TU_GOOGLE_FORM" target="_blank" rel="noopener">
+              Hacer encargo
+            </a>
           </div>
 
-          <p class="modal__note">Nota: disponibilidad sujeta a inventario. Reservas por WhatsApp.</p>
+          <p class="modal__note">
+            *Disponibilidad sujeta a existencias. Reservas por WhatsApp.
+          </p>
         </div>
       </div>
     </div>
   </div>
 
   <script>
-    const formatCRC = (n) => "₡" + Number(n || 0).toLocaleString("es-CR");
-
-    const discountPct = (now, old) => {
-      const n = Number(now), o = Number(old);
-      if (!o || o <= n) return "";
-      const pct = Math.round((1 - (n / o)) * 100);
-      return pct > 0 ? `-${pct}%` : "";
+    // ===== Helpers =====
+    const fmtCRC = (n) => {
+      const val = Number(n || 0);
+      return "₡" + val.toLocaleString("es-CR");
     };
 
+    const calcOff = (price, old) => {
+      price = Number(price || 0);
+      old = Number(old || 0);
+      if (!old || old <= price) return null;
+      const pct = Math.round(((old - price) / old) * 100);
+      return pct > 0 ? pct : null;
+    };
+
+    // ===== Elements =====
+    const chips = document.querySelectorAll(".chip");
+    const grid = document.getElementById("grid");
     const cards = Array.from(document.querySelectorAll(".card"));
-    const stockCountEl = document.getElementById("stockCount");
 
-    function refreshComputedUI() {
-      let totalAvailable = 0;
+    const countAvailable = document.getElementById("countAvailable");
+    const countLastUnits = document.getElementById("countLastUnits");
+    const countTotal = document.getElementById("countTotal");
 
-      cards.forEach(card => {
-        const stock = Number(card.dataset.stock || 0);
-        const price = Number(card.dataset.price || 0);
-        const oldPrice = Number(card.dataset.oldprice || 0);
+    // Modal elements
+    const modal = document.getElementById("productModal");
+    const modalImg = document.getElementById("modalImg");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalSub = document.getElementById("modalSub");
+    const modalStock = document.getElementById("modalStock");
+    const modalBadgeStatus = document.getElementById("modalBadgeStatus");
+    const modalBadgeLast = document.getElementById("modalBadgeLast");
 
-        const badgeSold = card.querySelector(".badge--sold");
+    const modalPriceNow = document.getElementById("modalPriceNow");
+    const modalPriceWas = document.getElementById("modalPriceWas");
+    const modalPriceOff = document.getElementById("modalPriceOff");
+    const modalWhatsApp = document.getElementById("modalWhatsApp");
+
+    // ===== Init: normalize last unit badge and offer labels =====
+    cards.forEach((card, i) => {
+      // Animations stagger
+      card.style.animationDelay = (i * 55) + "ms";
+      card.classList.add("reveal");
+
+      const stock = Number(card.dataset.stock || 0);
+      const status = (card.dataset.status || "available").toLowerCase();
+
+      // Ensure "última unidad" badge exists only when needed
+      const media = card.querySelector(".card__media");
+      const hasLast = media.querySelector(".badge--last");
+      if (stock === 1 && status !== "sold" && !hasLast) {
+        const b = document.createElement("span");
+        b.className = "badge badge--last";
+        b.textContent = "Última unidad";
+        media.appendChild(b);
+      }
+      if (stock !== 1 && hasLast) hasLast.remove();
+
+      // Offer calculation display (if oldprice exists)
+      const price = Number(card.dataset.price || 0);
+      const old = Number(card.dataset.oldprice || 0);
+      const off = calcOff(price, old);
+
+      const priceWrap = card.querySelector(".price");
+      if (priceWrap) {
+        const nowEl = priceWrap.querySelector(".price__now");
+        const wasEl = priceWrap.querySelector(".price__was");
+        const offEl = priceWrap.querySelector(".price__off");
+
+        if (nowEl) nowEl.textContent = fmtCRC(price);
+
+        if (!old || old <= price) {
+          if (wasEl) wasEl.style.display = "none";
+          if (offEl) offEl.style.display = "none";
+        } else {
+          if (wasEl) { wasEl.textContent = fmtCRC(old); wasEl.style.display = ""; }
+          if (offEl && off != null) { offEl.textContent = "-" + off + "%"; offEl.style.display = ""; }
+        }
+      }
+
+      // Sold state if stock=0
+      if (stock <= 0 || status === "sold") {
+        card.dataset.status = "sold";
         const badgeOk = card.querySelector(".badge--ok");
-        const lastUnit = card.querySelector(".badge--lastunit");
-
-        const chip = card.querySelector("[data-discount]");
-        const oldEl = card.querySelector(".price__old");
-
-        const pct = discountPct(price, oldPrice);
-        if (pct) {
-          chip.textContent = pct;
-          chip.hidden = false;
-          oldEl.hidden = false;
-          oldEl.textContent = formatCRC(oldPrice);
-        } else {
-          chip.hidden = true;
-          if (oldEl) oldEl.hidden = true;
+        if (badgeOk) badgeOk.remove();
+        const badgeSold = card.querySelector(".badge--sold");
+        if (!badgeSold) {
+          const b = document.createElement("span");
+          b.className = "badge badge--sold";
+          b.textContent = "Vendido";
+          media.appendChild(b);
         }
-
-        if (lastUnit) lastUnit.hidden = !(stock === 1 && stock > 0);
-
-        if (stock <= 0) {
-          card.dataset.status = "sold";
-          if (badgeSold) badgeSold.hidden = false;
-          if (badgeOk) badgeOk.hidden = true;
-
-          const btnOpen = card.querySelector(".btn-open");
-          if (btnOpen) btnOpen.outerHTML = `<button class="btn btn--disabled btn--full" disabled>No disponible</button>`;
-        } else {
-          totalAvailable += stock;
-          card.dataset.status = "available";
-          if (badgeSold) badgeSold.hidden = true;
-          if (badgeOk) badgeOk.hidden = false;
+        const btn = card.querySelector(".js-open");
+        if (btn) {
+          btn.className = "btn btn--disabled btn--full";
+          btn.textContent = "No disponible";
+          btn.disabled = true;
         }
-      });
+      }
+    });
 
-      stockCountEl.textContent = totalAvailable;
+    // ===== Filtering + counters =====
+    let currentFilter = "all";
+
+    function isVisibleByFilter(card) {
+      const category = card.dataset.category;
+      return (currentFilter === "all" || category === currentFilter);
     }
 
-    refreshComputedUI();
+    function refreshCounters() {
+      const visible = cards.filter(c => c.style.display !== "none" && isVisibleByFilter(c));
+      const available = visible.filter(c => (c.dataset.status || "available") !== "sold" && Number(c.dataset.stock || 0) > 0);
+      const lastUnits = available.filter(c => Number(c.dataset.stock || 0) === 1);
 
-    // Filter
-    const chips = document.querySelectorAll(".chip");
+      countTotal.textContent = visible.length;
+      countAvailable.textContent = available.length;
+      countLastUnits.textContent = lastUnits.length;
+    }
+
+    function applyFilter(filter) {
+      currentFilter = filter;
+
+      cards.forEach(card => {
+        const category = card.dataset.category;
+        const show = (filter === "all" || category === filter);
+        card.style.display = show ? "" : "none";
+      });
+
+      refreshCounters();
+    }
+
     chips.forEach(chip => {
       chip.addEventListener("click", () => {
         chips.forEach(c => c.classList.remove("active"));
         chip.classList.add("active");
-
-        const filter = chip.dataset.filter;
-        cards.forEach(card => {
-          const category = card.dataset.category;
-          card.style.display = (filter === "all" || category === filter) ? "" : "none";
-        });
+        applyFilter(chip.dataset.filter);
       });
     });
 
-    // Modal
-    const modal = document.getElementById("modal");
-    const modalOverlay = document.getElementById("modalOverlay");
-    const modalClose = document.getElementById("modalClose");
-
-    const modalImg = document.getElementById("modalImg");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalDesc = document.getElementById("modalDesc");
-    const modalNow = document.getElementById("modalNow");
-    const modalOld = document.getElementById("modalOld");
-    const modalChip = document.getElementById("modalChip");
-    const modalStock = document.getElementById("modalStock");
-    const modalWa = document.getElementById("modalWa");
-
-    function openModal(card) {
-      const name = card.dataset.name || "";
-      const desc = card.dataset.desc || "";
-      const img = card.dataset.img || "";
+    // ===== Modal logic =====
+    function openModalFromCard(card) {
+      const name = card.dataset.name || card.querySelector(".card__title")?.textContent?.trim() || "Producto";
+      const details = card.dataset.details || card.querySelector(".card__sub")?.textContent?.trim() || "";
+      const img = card.dataset.image || card.querySelector("img")?.getAttribute("src") || "";
       const price = Number(card.dataset.price || 0);
-      const oldPrice = Number(card.dataset.oldprice || 0);
+      const old = Number(card.dataset.oldprice || 0);
+      const off = calcOff(price, old);
+
       const stock = Number(card.dataset.stock || 0);
+      const status = (card.dataset.status || "available").toLowerCase();
 
       modalImg.src = img;
       modalImg.alt = name;
       modalTitle.textContent = name;
-      modalDesc.textContent = desc;
+      modalSub.textContent = details;
 
-      modalNow.textContent = formatCRC(price);
+      modalPriceNow.textContent = fmtCRC(price);
 
-      const pct = discountPct(price, oldPrice);
-      if (pct) {
-        modalOld.textContent = formatCRC(oldPrice);
-        modalOld.style.display = "inline-block";
-        modalChip.textContent = pct;
-        modalChip.style.display = "inline-block";
+      if (old && old > price) {
+        modalPriceWas.textContent = fmtCRC(old);
+        modalPriceWas.style.display = "";
+        if (off != null) {
+          modalPriceOff.textContent = "-" + off + "%";
+          modalPriceOff.style.display = "";
+        } else {
+          modalPriceOff.style.display = "none";
+        }
       } else {
-        modalOld.style.display = "none";
-        modalChip.style.display = "none";
+        modalPriceWas.style.display = "none";
+        modalPriceOff.style.display = "none";
       }
 
-      if (stock <= 0) {
-        modalStock.innerHTML = `<span class="pill pill--sold">Vendido</span>`;
-        modalWa.classList.add("is-disabled");
-        modalWa.href = "#";
-      } else {
-        const txt = stock === 1 ? "Última unidad disponible" : `${stock} disponibles`;
-        modalStock.innerHTML = `<span class="pill pill--ok">${txt}</span>`;
-        modalWa.classList.remove("is-disabled");
+      modalStock.textContent = stock;
 
-        const msg = encodeURIComponent(`Hola, quiero reservar el ${name} (${formatCRC(price)}) de Aura Moda USA.`);
-        modalWa.href = `https://wa.me/TU_NUMERO?text=${msg}`;
+      // badges
+      if (status === "sold" || stock <= 0) {
+        modalBadgeStatus.className = "badge badge--sold";
+        modalBadgeStatus.textContent = "Vendido";
+      } else {
+        modalBadgeStatus.className = "badge badge--ok";
+        modalBadgeStatus.textContent = "Disponible";
+      }
+
+      modalBadgeLast.style.display = (stock === 1 && status !== "sold") ? "" : "none";
+
+      // WhatsApp link
+      const msg = encodeURIComponent(`Hola, quiero reservar: ${name} (${fmtCRC(price)}) — La Tiendita CR by Gaby`);
+      modalWhatsApp.href = `https://wa.me/TU_NUMERO?text=${msg}`;
+
+      // disable WhatsApp if sold
+      if (status === "sold" || stock <= 0) {
+        modalWhatsApp.classList.add("btn--disabled");
+        modalWhatsApp.setAttribute("aria-disabled", "true");
+        modalWhatsApp.onclick = (e) => e.preventDefault();
+      } else {
+        modalWhatsApp.classList.remove("btn--disabled");
+        modalWhatsApp.removeAttribute("aria-disabled");
+        modalWhatsApp.onclick = null;
       }
 
       modal.classList.add("is-open");
       modal.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
+      document.body.classList.add("no-scroll");
     }
+
+    // open modal on card or button click
+    grid.addEventListener("click", (e) => {
+      const btn = e.target.closest(".js-open");
+      const card = e.target.closest(".card");
+      if (btn && card && !btn.disabled) openModalFromCard(card);
+      else if (card && !e.target.closest("a,button") && (card.dataset.status || "available") !== "sold") {
+        // click anywhere on card (except buttons/links)
+        openModalFromCard(card);
+      }
+    });
+
+    // close modal
+    modal.addEventListener("click", (e) => {
+      if (e.target.dataset.close === "true") closeModal();
+    });
 
     function closeModal() {
       modal.classList.remove("is-open");
       modal.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
+      document.body.classList.remove("no-scroll");
     }
 
-    document.addEventListener("click", (e) => {
-      const btn = e.target.closest(".btn-open");
-      if (btn) {
-        const card = e.target.closest(".card");
-        if (card) openModal(card);
-      }
-    });
-
-    modalOverlay.addEventListener("click", closeModal);
-    modalClose.addEventListener("click", closeModal);
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeModal();
+      if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
     });
-  </script>
 
+    // Initial counters
+    applyFilter("all");
+  </script>
 </body>
 </html>
