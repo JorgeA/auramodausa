@@ -1,58 +1,146 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aura Moda USA</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-
-<header>
-  <h1>Aura Moda USA</h1>
-  <p>Selección exclusiva de marcas originales</p>
-</header>
-
-<section class="intro">
-  <h2>Productos Disponibles</h2>
-  <p>Artículos originales traídos desde Estados Unidos. Entrega inmediata en Costa Rica.</p>
-</section>
-
-<section class="products">
-
-  <!-- PRODUCTO 1 -->
-  <div class="product">
-    <img src="https://via.placeholder.com/300x350" alt="Bolso Tommy Hilfiger">
-    <h3>Bolso Tommy Hilfiger</h3>
-    <p class="price">₡59,000</p>
-    <p class="status available">Disponible</p>
-    <a class="btn" href="https://wa.me/506XXXXXXXX?text=Hola,%20quiero%20reservar%20el%20Bolso%20Tommy%20Hilfiger%20de%20Aura%20Moda%20USA" target="_blank">
-      Reservar por WhatsApp
-    </a>
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="topbar__inner">
+      <span>🇺🇸 Selección original • 🇨🇷 Entrega en Costa Rica</span>
+      <a class="topbar__link" href="https://wa.me/TU_NUMERO" target="_blank">WhatsApp</a>
+    </div>
   </div>
 
-  <!-- PRODUCTO 2 -->
-  <div class="product">
-    <img src="https://via.placeholder.com/300x350" alt="Tenis Steve Madden">
-    <h3>Tenis Steve Madden</h3>
-    <p class="price">₡65,000</p>
-    <p class="status sold">Vendido</p>
-    <button class="btn disabled">No disponible</button>
-  </div>
+  <!-- Header / Hero -->
+  <header class="hero">
+    <div class="hero__content">
+      <div class="brand">
+        <div class="brand__mark">A</div>
+        <div>
+          <h1 class="brand__name">Aura Moda USA</h1>
+          <p class="brand__tag">Selección exclusiva de marcas originales</p>
+        </div>
+      </div>
 
-</section>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#catalogo">Ver catálogo</a>
+        <a class="btn btn--ghost" href="LINK_A_TU_GOOGLE_FORM" target="_blank">Hacer encargo</a>
+      </div>
 
-<section class="custom-order">
-  <h2>¿Buscas algo específico?</h2>
-  <p>Solicita tu encargo personalizado.</p>
-  <a class="btn-secondary" href="LINK_A_TU_GOOGLE_FORM" target="_blank">
-    Hacer Encargo
+      <div class="hero__meta">
+        <div class="meta-card">
+          <div class="meta-title">Entrega</div>
+          <div class="meta-value">Coordinada / Mensajería</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-title">Origen</div>
+          <div class="meta-value">Compras en USA</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-title">Reservas</div>
+          <div class="meta-value">WhatsApp</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Catalog -->
+  <main class="container" id="catalogo">
+    <section class="section-head">
+      <h2>Productos disponibles</h2>
+      <p>Artículos originales traídos desde Estados Unidos. Disponibles para entrega inmediata.</p>
+    </section>
+
+    <!-- Categories -->
+    <section class="filters">
+      <button class="chip active" data-filter="all">Todo</button>
+      <button class="chip" data-filter="bolsos">Bolsos</button>
+      <button class="chip" data-filter="carteras">Carteras</button>
+      <button class="chip" data-filter="accesorios">Accesorios</button>
+      <button class="chip" data-filter="zapatos">Zapatos</button>
+      <button class="chip" data-filter="ropa">Ropa</button>
+    </section>
+
+    <!-- Products grid -->
+    <section class="grid" id="grid">
+
+      <!-- EJEMPLO: BOLSO -->
+      <article class="card" data-category="bolsos" data-status="available">
+        <div class="card__media">
+          <img src="https://via.placeholder.com/600x700" alt="Bolso Tommy Hilfiger" />
+          <span class="badge badge--ok">Disponible</span>
+        </div>
+        <div class="card__body">
+          <div class="card__title">Bolso Tommy Hilfiger</div>
+          <div class="card__sub">Color: Negro • Tamaño: Mediano</div>
+          <div class="card__price">₡59,000</div>
+          <a class="btn btn--primary btn--full"
+             href="https://wa.me/TU_NUMERO?text=Hola,%20quiero%20reservar%20el%20Bolso%20Tommy%20Hilfiger%20(₡59,000)%20de%20Aura%20Moda%20USA"
+             target="_blank">
+            Reservar por WhatsApp
+          </a>
+        </div>
+      </article>
+
+      <!-- EJEMPLO: ZAPATOS (Vendido) -->
+      <article class="card" data-category="zapatos" data-status="sold">
+        <div class="card__media">
+          <img src="https://via.placeholder.com/600x700" alt="Tenis Steve Madden" />
+          <span class="badge badge--sold">Vendido</span>
+        </div>
+        <div class="card__body">
+          <div class="card__title">Tenis Steve Madden</div>
+          <div class="card__sub">Color: Blanco • Talla: US 10</div>
+          <div class="card__price">₡65,000</div>
+          <button class="btn btn--disabled btn--full" disabled>No disponible</button>
+        </div>
+      </article>
+
+      <!-- AGREGA MÁS PRODUCTOS COPIANDO UNA CARD -->
+    </section>
+
+    <!-- Custom order -->
+    <section class="callout">
+      <div>
+        <h3>¿Buscas algo específico?</h3>
+        <p>Haz tu encargo personalizado (bolsos, tenis, ropa y accesorios). Te cotizamos por WhatsApp.</p>
+      </div>
+      <a class="btn btn--gold" href="LINK_A_TU_GOOGLE_FORM" target="_blank">Hacer encargo</a>
+    </section>
+  </main>
+
+  <!-- Floating WhatsApp -->
+  <a class="whatsapp-float" href="https://wa.me/TU_NUMERO" target="_blank" aria-label="WhatsApp">
+    WhatsApp
   </a>
-</section>
 
-<footer>
-  <p>© 2026 Aura Moda USA | Marcas originales seleccionadas en Estados Unidos</p>
-</footer>
+  <footer class="footer">
+    <p>© 2026 Aura Moda USA • Marcas originales seleccionadas en Estados Unidos</p>
+  </footer>
 
+  <script>
+    // Category filter
+    const chips = document.querySelectorAll(".chip");
+    const cards = document.querySelectorAll(".card");
+
+    chips.forEach(chip => {
+      chip.addEventListener("click", () => {
+        chips.forEach(c => c.classList.remove("active"));
+        chip.classList.add("active");
+
+        const filter = chip.dataset.filter;
+
+        cards.forEach(card => {
+          const category = card.dataset.category;
+          card.style.display = (filter === "all" || category === filter) ? "block" : "none";
+        });
+      });
+    });
+  </script>
 </body>
 </html>
