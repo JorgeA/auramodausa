@@ -5,7 +5,7 @@
   --muted: #6b6b6b;
   --line: #e8e8e8;
 
-  /* palette inspired by your logo */
+  /* paleta basada en tu logo */
   --black: #141414;
   --gold: #c6a75e;
   --gold2: #b9923b;
@@ -40,6 +40,7 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:12px;
 }
 .topbar__link{
   color:#fff;
@@ -56,18 +57,22 @@ body{
 .hero__content{
   max-width:1100px;
   margin:0 auto;
-  padding:34px 16px 18px;
+  padding:28px 16px 18px;
 }
 
+/* BRAND (FIX: evita logo gigante) */
 .brand{
-  display:flex;
+  display:grid;
+  grid-template-columns: 120px 1fr;
+  gap:18px;
   align-items:center;
-  gap:16px;
 }
+
+/* Caja fija del logo (controla tamaño) */
 .brand__logo{
-  width:72px;
-  height:72px;
-  border-radius:16px;
+  width:120px;
+  height:120px;
+  border-radius:18px;
   overflow:hidden;
   background:#fff;
   border:1px solid var(--line);
@@ -75,19 +80,23 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
+  padding:10px;
 }
+
+/* El img NUNCA se sale */
 .brand__logo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+  max-width:100%;
+  max-height:100%;
+  width:auto;
+  height:auto;
+  object-fit:contain;
   display:block;
 }
-.brand__text{ flex:1; }
 
 .brand__name{
   margin:0;
   font-size:34px;
-  letter-spacing:.3px;
+  letter-spacing:.2px;
 }
 .brand__tag{
   margin:6px 0 0;
@@ -123,7 +132,7 @@ body{
 }
 .meta-value{
   margin-top:6px;
-  font-weight:800;
+  font-weight:900;
 }
 
 /* Layout */
@@ -132,6 +141,7 @@ body{
   margin:0 auto;
   padding:18px 16px 60px;
 }
+
 .section-head h2{
   margin:0;
   font-size:26px;
@@ -151,7 +161,7 @@ body{
 .trustline{
   margin-top:10px;
   font-size:13px;
-  font-weight:800;
+  font-weight:900;
   color:#2e2e2e;
 }
 
@@ -166,7 +176,7 @@ body{
   background:#fff;
   box-shadow: var(--shadow-soft);
   font-size:13px;
-  font-weight:800;
+  font-weight:900;
 }
 .stock-pill__dot{
   width:10px;
@@ -224,7 +234,6 @@ body{
   transform: translateY(-4px);
   box-shadow: var(--shadow);
 }
-
 @keyframes fadeUp{
   from{ opacity:0; transform: translateY(8px); }
   to{ opacity:1; transform: translateY(0); }
@@ -235,7 +244,7 @@ body{
   position:relative;
   aspect-ratio: 4 / 5;
   background:#f2f2f2;
-  padding:10px;
+  padding:12px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -244,7 +253,7 @@ body{
 .card__media::before{
   content:"";
   position:absolute;
-  inset:10px;
+  inset:12px;
   border-radius:12px;
   background:#fff;
   box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
@@ -268,7 +277,7 @@ body{
   padding:6px 10px;
   border-radius:999px;
   font-size:12px;
-  font-weight:900;
+  font-weight:950;
   color:#fff;
   box-shadow: 0 10px 18px rgba(0,0,0,0.14);
   z-index:2;
@@ -281,7 +290,6 @@ body{
   background: var(--gold2);
 }
 
-/* Sold state */
 .card[data-status="sold"]{
   opacity:.93;
 }
@@ -304,7 +312,7 @@ body{
   color:var(--muted);
 }
 
-/* Price (deal effect) */
+/* Price */
 .price{
   display:flex;
   align-items:baseline;
@@ -318,7 +326,7 @@ body{
 .price__old{
   color:#9a9a9a;
   text-decoration: line-through;
-  font-weight:800;
+  font-weight:850;
   font-size:13px;
 }
 .price__chip{
@@ -410,21 +418,14 @@ body{
 }
 
 /* Modal */
-.modal{
-  position:fixed;
-  inset:0;
-  display:none;
-  z-index:999;
-}
+.modal{ position:fixed; inset:0; display:none; z-index:999; }
 .modal.is-open{ display:block; }
 
 .modal__overlay{
-  position:absolute;
-  inset:0;
+  position:absolute; inset:0;
   background: rgba(0,0,0,0.55);
   backdrop-filter: blur(2px);
 }
-
 .modal__panel{
   position:relative;
   max-width: 920px;
@@ -432,7 +433,6 @@ body{
   margin: 34px auto;
   background:#fff;
   border-radius:18px;
-  border:1px solid rgba(255,255,255,0.35);
   box-shadow: 0 30px 70px rgba(0,0,0,0.30);
   padding:16px;
   animation: modalIn .18s ease both;
@@ -441,20 +441,15 @@ body{
   from{ opacity:0; transform: translateY(8px); }
   to{ opacity:1; transform: translateY(0); }
 }
-
 .modal__close{
-  position:absolute;
-  top:12px;
-  right:12px;
-  width:38px;
-  height:38px;
+  position:absolute; top:12px; right:12px;
+  width:38px; height:38px;
   border-radius:12px;
   border:1px solid var(--line);
   background:#fff;
   cursor:pointer;
   font-weight:900;
 }
-
 .modal__grid{
   display:grid;
   grid-template-columns: 1.1fr .9fr;
@@ -476,16 +471,8 @@ body{
   height:auto;
   object-fit:contain;
 }
-
-.modal__title{
-  margin:6px 0 0;
-  font-size:20px;
-  font-weight:950;
-}
-.modal__desc{
-  margin:10px 0 0;
-  color:var(--muted);
-}
+.modal__title{ margin:6px 0 0; font-size:20px; font-weight:950; }
+.modal__desc{ margin:10px 0 0; color:var(--muted); }
 
 .modal__price{
   margin-top:14px;
@@ -495,11 +482,7 @@ body{
   align-items:baseline;
 }
 .modal__now{ font-weight:950; }
-.modal__old{
-  color:#9a9a9a;
-  text-decoration: line-through;
-  font-weight:800;
-}
+.modal__old{ color:#9a9a9a; text-decoration: line-through; font-weight:850; }
 .modal__chip{
   background: rgba(198,167,94,0.18);
   border:1px solid rgba(198,167,94,0.35);
@@ -509,17 +492,13 @@ body{
   padding:5px 8px;
   border-radius:999px;
 }
-
 .modal__actions{
   margin-top:16px;
   display:flex;
   gap:10px;
   flex-wrap:wrap;
 }
-
-.modal__stock{
-  margin-top:12px;
-}
+.modal__stock{ margin-top:12px; }
 
 .pill{
   display:inline-flex;
@@ -532,10 +511,7 @@ body{
 .pill--ok{ background: var(--ok); }
 .pill--sold{ background: var(--sold); }
 
-#modalWa.is-disabled{
-  pointer-events:none;
-  opacity:.6;
-}
+#modalWa.is-disabled{ pointer-events:none; opacity:.6; }
 
 .modal__note{
   margin-top:12px;
@@ -550,9 +526,15 @@ body{
   .callout{ flex-direction:column; align-items:flex-start; }
   .modal__grid{ grid-template-columns:1fr; }
 }
-@media(max-width:600px){
+
+@media(max-width:650px){
   .grid{ grid-template-columns:1fr; }
-  .brand__name{ font-size:28px; }
-  .brand{ align-items:flex-start; }
-  .brand__logo{ width:64px; height:64px; }
+  .brand{
+    grid-template-columns: 1fr;
+    justify-items:center;
+    text-align:center;
+  }
+  .brand__logo{ width:130px; height:130px; }
+  .hero__cta{ justify-content:center; }
+  .hero__meta{ margin-top:14px; }
 }

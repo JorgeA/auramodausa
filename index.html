@@ -23,7 +23,7 @@
 
       <div class="brand">
         <div class="brand__logo">
-          <img src="images/logo.jpeg" alt="Aura Moda USA Logo" />
+          <img src="images/logo.jpeg" alt="Logo Aura Moda USA" />
         </div>
 
         <div class="brand__text">
@@ -146,7 +146,7 @@
         </div>
       </article>
 
-      <!-- PRODUCTO 3 (Vendido por stock=0) -->
+      <!-- PRODUCTO 3 -->
       <article class="card"
         data-category="zapatos"
         data-name="Tenis Steve Madden"
@@ -235,11 +235,7 @@
   </div>
 
   <script>
-    // ========= Helpers =========
-    const formatCRC = (n) => {
-      const num = Number(n || 0);
-      return "₡" + num.toLocaleString("es-CR");
-    };
+    const formatCRC = (n) => "₡" + Number(n || 0).toLocaleString("es-CR");
 
     const discountPct = (now, old) => {
       const n = Number(now), o = Number(old);
@@ -248,7 +244,6 @@
       return pct > 0 ? `-${pct}%` : "";
     };
 
-    // ========= Stock + labels + discount chips =========
     const cards = Array.from(document.querySelectorAll(".card"));
     const stockCountEl = document.getElementById("stockCount");
 
@@ -260,18 +255,13 @@
         const price = Number(card.dataset.price || 0);
         const oldPrice = Number(card.dataset.oldprice || 0);
 
-        // Sold by stock
         const badgeSold = card.querySelector(".badge--sold");
         const badgeOk = card.querySelector(".badge--ok");
-        const btnOpen = card.querySelector(".btn-open");
-        const btnDisabled = card.querySelector(".btn--disabled");
         const lastUnit = card.querySelector(".badge--lastunit");
 
-        // discount chip in card
         const chip = card.querySelector("[data-discount]");
         const oldEl = card.querySelector(".price__old");
 
-        // Show discount chip if oldPrice
         const pct = discountPct(price, oldPrice);
         if (pct) {
           chip.textContent = pct;
@@ -283,18 +273,15 @@
           if (oldEl) oldEl.hidden = true;
         }
 
-        // Last unit badge if stock==1 and available
-        if (lastUnit) lastUnit.hidden = !(stock === 1);
+        if (lastUnit) lastUnit.hidden = !(stock === 1 && stock > 0);
 
-        // Sold if stock == 0
         if (stock <= 0) {
           card.dataset.status = "sold";
           if (badgeSold) badgeSold.hidden = false;
           if (badgeOk) badgeOk.hidden = true;
 
-          if (btnOpen) {
-            btnOpen.outerHTML = `<button class="btn btn--disabled btn--full" disabled>No disponible</button>`;
-          }
+          const btnOpen = card.querySelector(".btn-open");
+          if (btnOpen) btnOpen.outerHTML = `<button class="btn btn--disabled btn--full" disabled>No disponible</button>`;
         } else {
           totalAvailable += stock;
           card.dataset.status = "available";
@@ -308,7 +295,7 @@
 
     refreshComputedUI();
 
-    // ========= Filter =========
+    // Filter
     const chips = document.querySelectorAll(".chip");
     chips.forEach(chip => {
       chip.addEventListener("click", () => {
@@ -316,7 +303,6 @@
         chip.classList.add("active");
 
         const filter = chip.dataset.filter;
-
         cards.forEach(card => {
           const category = card.dataset.category;
           card.style.display = (filter === "all" || category === filter) ? "" : "none";
@@ -324,7 +310,7 @@
       });
     });
 
-    // ========= Modal =========
+    // Modal
     const modal = document.getElementById("modal");
     const modalOverlay = document.getElementById("modalOverlay");
     const modalClose = document.getElementById("modalClose");
@@ -367,13 +353,11 @@
       if (stock <= 0) {
         modalStock.innerHTML = `<span class="pill pill--sold">Vendido</span>`;
         modalWa.classList.add("is-disabled");
-        modalWa.setAttribute("aria-disabled", "true");
         modalWa.href = "#";
       } else {
         const txt = stock === 1 ? "Última unidad disponible" : `${stock} disponibles`;
         modalStock.innerHTML = `<span class="pill pill--ok">${txt}</span>`;
         modalWa.classList.remove("is-disabled");
-        modalWa.removeAttribute("aria-disabled");
 
         const msg = encodeURIComponent(`Hola, quiero reservar el ${name} (${formatCRC(price)}) de Aura Moda USA.`);
         modalWa.href = `https://wa.me/TU_NUMERO?text=${msg}`;
