@@ -8,6 +8,7 @@
 </head>
 
 <body>
+
   <!-- Top bar -->
   <div class="topbar">
     <div class="topbar__inner">
@@ -16,9 +17,10 @@
     </div>
   </div>
 
-  <!-- Header / Hero -->
+  <!-- Header -->
   <header class="hero">
     <div class="hero__content">
+
       <div class="brand">
         <div class="brand__mark">A</div>
         <div>
@@ -46,17 +48,19 @@
           <div class="meta-value">WhatsApp</div>
         </div>
       </div>
+
     </div>
   </header>
 
   <!-- Catalog -->
   <main class="container" id="catalogo">
+
     <section class="section-head">
       <h2>Productos disponibles</h2>
-      <p>Artículos originales traídos desde Estados Unidos. Disponibles para entrega inmediata.</p>
+      <p>Artículos originales traídos desde Estados Unidos. Entrega inmediata en Costa Rica.</p>
     </section>
 
-    <!-- Categories -->
+    <!-- Filters -->
     <section class="filters">
       <button class="chip active" data-filter="all">Todo</button>
       <button class="chip" data-filter="bolsos">Bolsos</button>
@@ -66,18 +70,18 @@
       <button class="chip" data-filter="ropa">Ropa</button>
     </section>
 
-    <!-- Products grid -->
+    <!-- Products Grid -->
     <section class="grid" id="grid">
 
-      <!-- EJEMPLO: BOLSO -->
-      <article class="card" data-category="bolsos" data-status="available">
+      <!-- PRODUCTO 1 -->
+      <article class="card" data-category="bolsos">
         <div class="card__media">
-          <img src="images/bolso_azul_tommy_1-O.webp" alt="Bolso Tommy Hilfiger" />
+          <img src="images/bolso_azul_tommy_1-O.webp" alt="Bolso Tommy Hilfiger">
           <span class="badge badge--ok">Disponible</span>
         </div>
         <div class="card__body">
           <div class="card__title">Bolso Tommy Hilfiger</div>
-          <div class="card__sub">Color: Negro • Tamaño: Mediano</div>
+          <div class="card__sub">Color: Azul • Tamaño: Mediano</div>
           <div class="card__price">₡59,000</div>
           <a class="btn btn--primary btn--full"
              href="https://wa.me/TU_NUMERO?text=Hola,%20quiero%20reservar%20el%20Bolso%20Tommy%20Hilfiger%20(₡59,000)%20de%20Aura%20Moda%20USA"
@@ -87,64 +91,63 @@
         </div>
       </article>
 
-          <section class="grid" id="grid">
-
-      <!-- EJEMPLO: BOLSO -->
-      <article class="card" data-category="bolsos" data-status="available">
+      <!-- PRODUCTO 2 -->
+      <article class="card" data-category="bolsos">
         <div class="card__media">
-          <img src="images/bolso_steve_maiden_negro.jpg" alt="Bolso Steve Maiden" />
+          <img src="images/bolso_steve_maiden_negro.jpg" alt="Bolso Steve Madden">
           <span class="badge badge--ok">Disponible</span>
         </div>
         <div class="card__body">
-          <div class="card__title">Bolso Steve Maiden</div>
+          <div class="card__title">Bolso Steve Madden</div>
           <div class="card__sub">Color: Negro • Tamaño: Mediano</div>
           <div class="card__price">₡59,000</div>
           <a class="btn btn--primary btn--full"
-             href="https://wa.me/TU_NUMERO?text=Hola,%20quiero%20reservar%20el%20Bolso%20Tommy%20Hilfiger%20(₡59,000)%20de%20Aura%20Moda%20USA"
+             href="https://wa.me/TU_NUMERO?text=Hola,%20quiero%20reservar%20el%20Bolso%20Steve%20Madden%20(₡59,000)%20de%20Aura%20Moda%20USA"
              target="_blank">
             Reservar por WhatsApp
           </a>
         </div>
       </article>
 
-      <!-- EJEMPLO: ZAPATOS (Vendido) -->
-      <article class="card" data-category="zapatos" data-status="sold">
+      <!-- PRODUCTO 3 -->
+      <article class="card" data-category="zapatos">
         <div class="card__media">
-          <img src= "images\Tenis_steve_maiden.webp" alt="Tenis Steve Madden" />
+          <img src="images/Tenis_steve_maiden.webp" alt="Tenis Steve Madden">
           <span class="badge badge--sold">Vendido</span>
         </div>
         <div class="card__body">
           <div class="card__title">Tenis Steve Madden</div>
           <div class="card__sub">Color: Blanco • Talla: US 10</div>
           <div class="card__price">₡65,000</div>
-          <button class="btn btn--disabled btn--full" disabled>No disponible</button>
+          <button class="btn btn--disabled btn--full">No disponible</button>
         </div>
       </article>
 
-      <!-- AGREGA MÁS PRODUCTOS COPIANDO UNA CARD -->
     </section>
 
-    <!-- Custom order -->
+    <!-- Callout -->
     <section class="callout">
       <div>
         <h3>¿Buscas algo específico?</h3>
-        <p>Haz tu encargo personalizado (bolsos, tenis, ropa y accesorios). Te cotizamos por WhatsApp.</p>
+        <p>Haz tu encargo personalizado.</p>
       </div>
-      <a class="btn btn--gold" href="LINK_A_TU_GOOGLE_FORM" target="_blank">Hacer encargo</a>
+      <a class="btn btn--gold" href="LINK_A_TU_GOOGLE_FORM" target="_blank">
+        Hacer encargo
+      </a>
     </section>
+
   </main>
 
-  <!-- Floating WhatsApp -->
-  <a class="whatsapp-float" href="https://wa.me/TU_NUMERO" target="_blank" aria-label="WhatsApp">
+  <!-- WhatsApp floating -->
+  <a class="whatsapp-float" href="https://wa.me/TU_NUMERO" target="_blank">
     WhatsApp
   </a>
 
   <footer class="footer">
-    <p>© 2026 Aura Moda USA • Marcas originales seleccionadas en Estados Unidos</p>
+    © 2026 Aura Moda USA • Marcas originales seleccionadas en Estados Unidos
   </footer>
 
   <script>
-    // Category filter
     const chips = document.querySelectorAll(".chip");
     const cards = document.querySelectorAll(".card");
 
@@ -157,10 +160,11 @@
 
         cards.forEach(card => {
           const category = card.dataset.category;
-          card.style.display = (filter === "all" || category === filter) ? "block" : "none";
+          card.style.display = (filter === "all" || category === filter) ? "" : "none";
         });
       });
     });
   </script>
+
 </body>
 </html>
