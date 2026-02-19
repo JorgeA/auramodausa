@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  color: #1c1c1c;
+}
+
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+  letter-spacing: 2px;
+}
+
+header p {
+  margin-top: 10px;
+  color: #666;
+}
+
+.intro {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.product {
+  background: #ffffff;
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.product img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.status {
+  margin: 5px 0 15px;
+  font-weight: bold;
+}
+
+.available {
+  color: #2e7d32;
+}
+
+.sold {
+  color: #c62828;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #1c1c1c;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background: #333;
+}
+
+.disabled {
+  background: #999;
+  cursor: not-allowed;
+}
+
+.custom-order {
+  text-align: center;
+  padding: 40px 20px;
+  background: #ffffff;
+  margin-top: 40px;
+}
+
+.btn-secondary {
+  padding: 10px 15px;
+  background: #c6a75e;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #777;
+}
